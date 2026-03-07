@@ -5,5 +5,6 @@ public class jen1{
   System.out.println("Hello This is Jenkins project");
   System.out.println("Hello Nishi");
   System.out.println("THIS IS UPDATED FOR WEBHOOKS");
+  System.out.println("THIS IS UPDATED FOR PIPELINE");
   }
 }
