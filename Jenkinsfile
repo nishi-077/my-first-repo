@@ -9,12 +9,13 @@ pipeline {
         }
          stage('Build') {
             steps {
-               bat 'javac jen1.java'
+               bat 'javac fifth.java'
             }
         }
-         stage('Execute') {
+         stage('Deploy') {
             steps {
-                bat 'java jen1'
+                echo "Deploying application"
+                bat 'java fifth'
             }
         }
     }
