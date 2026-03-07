@@ -9,7 +9,7 @@ pipeline {
         }
          stage('Build') {
             steps {
-                echo "Building application"
+               echo "Building application"
                bat 'javac fifth.java'
             }
         }
