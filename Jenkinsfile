@@ -7,17 +7,15 @@ pipeline {
                 git "https://github.com/nishi-077/my-first-repo.git"
             }
         }
-         stage('Build') {
-            steps {
-               echo "Building application"
-               bat 'javac fifth.java'
-            }
-        }
-         stage('Deploy') {
-            steps {
-                echo "Deploying application"
-                bat 'java fifth'
-            }
-        }
+         stage('Publish') {
+            steps{
+                publishHTML([
+                    allowmissing:true,
+                    alwaysLinktoLastBuild:false,
+                    keepAll:false,
+                    reportDir:'.',
+                    reportFiles:'jenhtml.html',
+                    reportName:'My html Publish'
+    ])
     }
 }
