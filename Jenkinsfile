@@ -14,7 +14,7 @@ pipeline {
                     alwaysLinkToLastBuild:false,
                     keepAll:false,
                     reportDir:'.',
-                    reportFiles:'jenhtml.html',
+                    reportFiles:'jenhtml1.html',
                     reportName:'My html Publish'
     ])
     }
