@@ -11,7 +11,7 @@ pipeline {
             steps{
                 publishHTML([
                     allowMissing:true,
-                    alwaysLinktToLastBuild:false,
+                    alwaysLinkToLastBuild:false,
                     keepAll:false,
                     reportDir:'.',
                     reportFiles:'jenhtml.html',
