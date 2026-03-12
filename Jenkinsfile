@@ -18,4 +18,6 @@ pipeline {
                     reportName:'My html Publish'
     ])
     }
+    }
+}
 }
