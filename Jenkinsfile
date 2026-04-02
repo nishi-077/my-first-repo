@@ -4,20 +4,24 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git "https://github.com/nishi-077/my-first-repo.git"
+                git 'https://github.com/nishi-077/my-first-repo.git',branch:'master'
             }
         }
-         stage('Publish') {
+         stage('Build Image') {
             steps{
-                publishHTML([
-                    allowMissing:true,
-                    alwaysLinkToLastBuild:false,
-                    keepAll:false,
-                    reportDir:'.',
-                    reportFiles:'jenhtml1.html',
-                    reportName:'My html Publish'
-    ])
+               bat 'docker build -t myjen .'
+            }
     }
+      stage('Stop Old Containers') {
+            steps{
+               bat 'docker stop mycont || exit 0' 
+                bat 'docker rm mycont || exit 0'
     }
+}
+         stage('Run Image-Containerize') {
+            steps{
+               bat 'docker run -d -p 7000:80 --name mycont myjen' 
+    }
+}
 }
 }
