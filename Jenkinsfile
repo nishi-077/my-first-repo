@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/nishi-077/my-first-repo.git',branch:'master'
+                git 'https://github.com/nishi-077/my-first-repo.git'
             }
         }
          stage('Build Image') {
